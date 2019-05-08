@@ -1,7 +1,7 @@
 require 'prawn'
 require 'prawn/table'
 
-class Relational
+module Relational
   module Writer
     class Pdf
       def call(relation, opts = {})
