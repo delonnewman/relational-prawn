@@ -13,7 +13,7 @@ module Relational
         pdf.text subtitle, size: 10 if title
         pdf.text "\n" if title or subtitle
 
-        data = relation.body.map(&:values).to_a
+        data = relation.body.map { |r| r.values.map(&:to_s) }.to_a
         data_table = [relation.header.map(&:to_s)] + data
 
         pdf.table(data_table) do
